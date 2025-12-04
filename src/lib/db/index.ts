@@ -18,6 +18,16 @@ sqlite.exec(`
     price REAL NOT NULL,
     section_id INTEGER NOT NULL REFERENCES sections(id)
   );
+  CREATE TABLE IF NOT EXISTS cart_items (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id TEXT NOT NULL,
+    product_id INTEGER NOT NULL REFERENCES products(id) ON DELETE CASCADE,
+    quantity INTEGER NOT NULL DEFAULT 1,
+    created_at INTEGER NOT NULL,
+    updated_at INTEGER NOT NULL
+  );
+  CREATE INDEX IF NOT EXISTS idx_cart_user ON cart_items(user_id);
+  CREATE INDEX IF NOT EXISTS idx_cart_user_product ON cart_items(user_id, product_id);
 `);
 
 export const db = drizzle(sqlite, { schema });
