@@ -26,6 +26,12 @@ async function AuthStatus() {
           >
             Products
           </Link>
+          <Link
+            href="/shop"
+            className="px-4 py-2 bg-zinc-900 text-white rounded-md hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200"
+          >
+            Shop
+          </Link>
         </div>
         <LogoutButton />
       </div>

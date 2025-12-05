@@ -7,4 +7,5 @@ export class Messages {
 
   static readonly PRODUCT_NOT_FOUND = "Product not found";
   static readonly SECTION_NOT_FOUND = "Section not found";
+  static readonly CART_ITEM_NOT_FOUND = "Cart item not found";
 }

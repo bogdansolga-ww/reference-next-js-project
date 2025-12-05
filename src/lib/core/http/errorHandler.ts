@@ -10,6 +10,9 @@ export function handleError(error: unknown): NextResponse {
     if (error.name === "ValidationError") {
       return NextResponse.json({ error: error.message }, { status: HTTP_STATUS.BAD_REQUEST });
     }
+    if (error.name === "CartError") {
+      return NextResponse.json({ error: error.message }, { status: HTTP_STATUS.BAD_REQUEST });
+    }
   }
 
   console.error("Unexpected error:", error);
